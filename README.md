@@ -27,9 +27,19 @@ Curated by Gordo. Essay companion: [The State of Self-Hosted Music Listening](ht
 
 Here’s how I see this layer: make a local archive searchable, identifiable, and trustworthy without destroying folder truth — tags in files, release identity, inbox/staging, duplicate judgment. Deeper essay: [library management](https://tapemusicsuite.com/blog/local-music-library-management).
 
+### Intake & acquisition
+
+Arrival tools. They feed Downloads → Preview → archive; they are not the catalog authority. Tape’s future notes treat this as an optional plugin over external daemons, not core playback.
+
+- **[Lidarr](https://lidarr.audio/)** — Strength: wanted-artist / quality-profile manager in the *arr family — “I want this release” as state, not a one-off search. Weakness: indexer/download-client gravity; the wanted DB is yet another authority beside the files you actually play.
+- **[slskd](https://github.com/slskd/slskd)** — Strength: Soulseek as a daemon API — the transfer engine collectors already drop into an intake folder. Weakness: P2P seeking is not library hygiene; path chaos lands in Inbox unless something else stages it.
+- **[Soularr](https://github.com/mrusse/soularr)** — Strength: bridge that reads Lidarr wanted state and acquires through slskd — the orchestrator our plugin research named instead of reimplementing Soulseek inside a hub. Weakness: three moving parts (Lidarr + slskd + Soularr) before a file is even tagged.
+- **[Soulseek](https://www.slsknet.org/) / [Nicotine+](https://nicotine-plus.org/)** — Strength: the human seeking UI that still finds rips and promos storefronts never carried. Weakness: desktop client as intake, not as identity; folders arrive messy on purpose.
+- **[yt-dlp](https://github.com/yt-dlp/yt-dlp)** — Strength: CLI extraction from web sources when the “download” is a YouTube/SoundCloud idea, not a storefront purchase. Weakness: metadata is whatever the page had; this is intake, not enrichment.
+
 ### Enrichment & identity
 
-- **[MusicBrainz Picard](https://picard.musicbrainz.org/)** — Strength: release-aware tagging against [MusicBrainz](https://musicbrainz.org/) that writes identity into the files so it survives a player reinstall. Weakness: matching still costs attention, and same-title different masters punish overconfident auto-accept.
+- **[MusicBrainz Picard](https://picard.musicbrainz.org/)** — Strength: release-aware tagging against [MusicBrainz](https://musicbrainz.org/) / [AcoustID](https://acoustid.org/) that writes identity into the files so it survives a player reinstall. Weakness: matching still costs attention, and same-title different masters punish overconfident auto-accept.
 - **[beets](https://beets.io/)** — Strength: scriptable CLI import, rename, and metadata pipeline for people who want the library as versionable data. Weakness: it can become yet another authority beside a player DB, and the learning curve is real before the pipeline feels safe.
 - **[SongKong](https://jthink.net/songkong/) / [Yate](https://2manyrobots.com/yate/) / [Jaikoz](https://www.jthink.net/jaikoz/)** — Strength: automated tag repair that buys time back on mass enrichment. Weakness: destructive confidence against ambiguous releases.
 
@@ -160,7 +170,7 @@ Here’s how I see this layer: rediscover forgotten owned tracks; radio-like pat
 - **Desk dynamic playlists ([foobar2000](https://www.foobar2000.org/) / [MusicBee](https://www.getmusicbee.com/) / [iTunes](https://www.apple.com/itunes/)-class)** — Strength: dynamic lists where the desk authority owns the rules. Weakness: best discovery UI may not be where enrichment happens or where the phone listens.
 - **Manual crate rituals / Preview folders** — Strength: human crate digging and staging as rediscovery — underrated and reversible. Weakness: unpaid discipline; doesn’t scale without tagging hygiene (n/a ritual).
 - **[MusicBrainz](https://musicbrainz.org/) / [Discogs](https://www.discogs.com/)-assisted browsing** — Strength: release identity / provenance that makes search trustworthy. Weakness: not a replacement pitch for either service as a listening product — identity fuel, not a radio engine.
-- **[Last.fm](https://www.last.fm/) scrobble habits** — Strength: optional play-history aided rediscovery when you already scrobble. Weakness: don’t invent centrality; history is a side channel.
+- **[Last.fm](https://www.last.fm/) / [ListenBrainz](https://listenbrainz.org/) scrobble habits** — Strength: optional play-history aided rediscovery when you already scrobble; ListenBrainz is the open side-channel for the same job. Weakness: don’t invent centrality; history is a side channel, not the library.
 - **[Bandcamp](https://bandcamp.com/)** — Strength: intake and collection culture that feeds the archive you actually own. Weakness: purchase culture more than a “discovery engine” claim inside the local library.
 
 ---
@@ -173,6 +183,15 @@ Here’s how I see this layer: stage prep and show software — cues, grids, har
 - **[Serato](https://serato.com/dj)** — Strength: crate-centric DJ performance library with hardware and show confidence. Weakness: crates/paths/portability threads — manager sync and folder moves can orphan work.
 - **[Traktor](https://www.native-instruments.com/products/traktor-pro)** — Strength: DJ collection and performance surface with smart-list / migration narratives in real workflows. Weakness: migration hell and collection handoff remain unpaid when the desk library isn’t Traktor.
 - **[Engine DJ](https://enginedj.com/) / [VirtualDJ](https://www.virtualdj.com/) / [djay](https://www.algoriddim.com/)** — Strength: alternate performance surfaces in some workflows. Weakness: more destinations mean more export seams — still no vs-table.
+- **[Mixxx](https://mixxx.org/)** — Strength: open performance deck with serious local analysis (BPM/key lineage shared with KeyFinder). Weakness: still a stage/listen app; crates and tags may not be the hub catalog.
+
+### Analysis & key (prep, not the show)
+
+Specialists our DJ-analysis roadmap named instead of pretending Rekordbox built-in is enough.
+
+- **[Mixed In Key](https://mixedinkey.com/)** — Strength: paid harmonic-mixing reference bar — batch key/energy into tags DJs actually trust. Weakness: another app before the stage DB; not a library manager.
+- **[KeyFinder](https://ibrahimshaath.co.uk/keyfinder/)** — Strength: local OSS batch key estimation that writes files; historical “folder in, tags out.” Weakness: dated desktop; Mixxx now carries the algorithm for many people.
+- **[Lowkey](https://lattebits.com/lowkey)** — Strength: newer local batch key/BPM → ID3 so Rekordbox/Serato see it without a cloud upload. Weakness: small shared muscle memory; still a sidecar before the hub.
 
 ---
 
@@ -201,6 +220,7 @@ Here’s how I see this layer: whole-home playback and dedicated streamer boxes 
 - **[Sendspin](https://www.sendspin-audio.com/)** — Strength: open whole-home sync (Open Home Foundation) aimed at audio + artwork across rooms, often via [Music Assistant](https://www.music-assistant.io/). Weakness: a multi-room protocol is not desk→phone continuity; HA gravity can become the product.
 - **[moOde Audio](https://moodeaudio.org/)** — Strength: Raspberry Pi streamer OS with a serious web UI for local and renderer playback. Weakness: appliance listening in the room; the phone and the tag pipeline still live elsewhere.
 - **[piCorePlayer](https://www.picoreplayer.org/)** — Strength: RAM-boot Squeeze/Lyrion player (and optional LMS host) that people trust through power pulls. Weakness: Lyrion-lineage world; not the default Navidrome + Symfonium commute stack.
+- **[Sonos](https://www.sonos.com/) / Chromecast / UPnP ([Rygel](https://gnome.pages.gitlab.gnome.org/rygel/))** — Strength: room endpoints people already use when the phone is a controller, not the speaker. Weakness: renderer identity is not catalog identity; groups and caches drift from the hub.
 
 ---
 
@@ -221,6 +241,7 @@ Here’s how I see this layer: specialists get you most of the way; living acros
 - **Desk + server + [WireGuard](https://www.wireguard.com/) / [Tailscale](https://tailscale.com/) / [Headscale](https://headscale.net/) + phone client** — Strength: full franken lifestyle that can feel complete on a good LAN day. Weakness: completeness theater until one seam fails — cellular + VPN + cache.
 - **[beets](https://beets.io/) + [Navidrome](https://www.navidrome.org/) + [piCorePlayer](https://www.picoreplayer.org/) + [Symfonium](https://symfonium.app/)** — Strength: file pipeline + lean index + room streamer + commute client. Weakness: three listen surfaces; ratings and playlists still have to pick an authority.
 - **[Music Assistant](https://www.music-assistant.io/) + [Sendspin](https://www.sendspin-audio.com/) + [Home Assistant](https://www.home-assistant.io/)** — Strength: whole-home sync when the house is already an HA node. Weakness: smart-home gravity; local files can become one source among storefronts.
+- **[Lidarr](https://lidarr.audio/) + [Soularr](https://github.com/mrusse/soularr) + [slskd](https://github.com/slskd/slskd) → intake folder** — Strength: wanted-library automation that drops files where a hub can scan — the acquisition stack our plugin research mapped instead of shipping Soulseek in-process. Weakness: three daemons plus legal/ops posture; Inbox still has to become identity.
 
 “Almost one catalog feeling” is not almost a brand. Keep a quiet frankenstack if crates arrive, caches tell the truth, and remote nights are not incident response.
 

@@ -2,7 +2,7 @@
 
 This is a **directory**, not a ranking and not a feature war.
 
-PRs are welcome from people who **maintain** a tool in this stack, or who can point to a verified official homepage and a real owned-library job (listen, tag, serve, cache, export, DJ, multi-room, remote reach).
+PRs are welcome from people who **maintain** a tool in this stack, or who can point to a verified official homepage and a real owned-library job (listen, tag, intake/acquisition, serve, cache, export, DJ analysis, multi-room, remote reach).
 
 Merges are reviewed. Nothing here auto-publishes to [tapemusicsuite.com](https://tapemusicsuite.com).
 
@@ -16,7 +16,6 @@ Merges are reviewed. Nothing here auto-publishes to [tapemusicsuite.com](https:/
 ## What not to add
 
 - Storefront-only streaming apps (the catalog lives in a vendor cloud).
-- Acquisition / indexer / grey-market pipelines (Lidarr-class *arr, Soulseek daemons, yt-dlp as library intake) unless a maintainer opens an issue first and we decide the vertical.
 - Hardware SKUs, page-turner pedals, or live-notation apps unless we open a dedicated vertical.
 - “Better than X” tables, OSS sermons, or Tape-vs-the-field framing.
 - Duplicate entries. Search `README.md` first.
