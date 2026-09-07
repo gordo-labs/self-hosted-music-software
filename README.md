@@ -1,10 +1,14 @@
 # The Self-Hosted Music Software Landscape
 
-A scannable directory of software people actually use to run an **owned local music library** — library hygiene, desk players, servers, phone clients, remote access, discovery, DJ, playlists, multi-room. Open and closed tools sit on the same map.
+I built this directory out of need, and out of a curiosity I could not drop. I wanted the files I already own to feel like **one system** — desk, phone, commute, crates — without the week turning into a homelab exam. The first user was me. The product question came next: why isn’t there a **horizontal, stable** way to keep a coherent catalog across every part of that life, simple enough that listening stays **fun** instead of becoming a technical challenge?
 
-**PRs welcome** from people who maintain a tool in this stack. Read [CONTRIBUTING.md](CONTRIBUTING.md). Merges are reviewed; this list does not auto-publish to the Tape site.
+The tools below are not the failure. They are excellent specialists. Open and closed sit on the same map. The hole is cohesion: five truths for the same music, unpaid glue, a stack that works on a good LAN day and frays as soon as you leave the house.
 
-Curated by Gordo. Essay companion: [The State of Self-Hosted Music Listening](https://tapemusicsuite.com/blog/state-of-self-hosted-music-listening) · site: [tapemusicsuite.com](https://tapemusicsuite.com)
+That is why this research exists. And that is why I built **[Tape Music Suite](https://tapemusicsuite.com)** — v1 now, and the versions after it. An opinionated horizontal stack for local music. Keep rekordbox on stage and foobar2000 at the desk if those tools still win their job.
+
+This repo is the open catalog. [PRs](CONTRIBUTING.md) from people who maintain software in this stack are welcome. Merges are reviewed; the list does not auto-publish to the Tape site.
+
+Essay companion: [The State of Self-Hosted Music Listening](https://tapemusicsuite.com/blog/state-of-self-hosted-music-listening).
 
 ## Jump to
 
@@ -265,6 +269,6 @@ Here’s how I see this layer: specialists get you most of the way; living acros
 
 If you maintain five truths so the same music can follow you from desk to phone to set, that is a cohesion problem — not a failure of any specialist named above.
 
-This catalog is research for a specific build: an opinionated **horizontal** stack for local music — library, playing, phone, remote, playlists as one catalog — not another specialist that wins only one vertical. [Tape Music Suite](https://tapemusicsuite.com) is that attempt. I’m not asking you to abandon rekordbox on stage or foobar2000 at the desk if those tools still win their job. Trial is twenty hours of use or thirty days, then a license — V1 at $100, or Lifetime at $120 early bird ($150 later).
+This catalog is research for that build — not a ranking, not a feature war. I’m not asking you to abandon rekordbox on stage or foobar2000 at the desk if those tools still win their job. Trial on Tape is twenty hours of use or thirty days, then a license — V1 at $100, or Lifetime at $120 early bird ($150 later).
 
 Want something added or corrected? **[Open a pull request](https://github.com/gordo-labs/self-hosted-music-software/compare).** Maintainer of a tool in this stack? Even better. How to file it: [CONTRIBUTING.md](CONTRIBUTING.md).

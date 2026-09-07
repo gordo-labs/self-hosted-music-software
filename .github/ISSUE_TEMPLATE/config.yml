@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Tape Music Suite
+    url: https://tapemusicsuite.com
+    about: The opinionated horizontal stack this catalog is research for (v1 and later).
+  - name: How to add software
+    url: https://github.com/gordo-labs/self-hosted-music-software/blob/main/CONTRIBUTING.md
+    about: PR rules — official URL, strength and weakness, one product.
