@@ -242,4 +242,8 @@ Here’s how I see this layer: specialists get you most of the way; living acros
 
 ---
 
-If you maintain five truths so the same music can follow you from desk to phone to set, that is a cohesion problem — not a failure of any specialist named above. [Tape Music Suite](https://tapemusicsuite.com) is one local-first system for library management, playing, playlist building, and multi-device listening. I’m not asking you to abandon rekordbox on stage or foobar2000 at the desk if those tools still win their vertical. Trial is twenty hours of use or thirty days, then a license — V1 at $100, or Lifetime at $120 early bird ($150 later).
+If you maintain five truths so the same music can follow you from desk to phone to set, that is a cohesion problem — not a failure of any specialist named above.
+
+This catalog is research for a specific build: an opinionated **horizontal** stack for local music — library, playing, phone, remote, playlists as one catalog — not another specialist that wins only one vertical. [Tape Music Suite](https://tapemusicsuite.com) is that attempt. I’m not asking you to abandon rekordbox on stage or foobar2000 at the desk if those tools still win their job. Trial is twenty hours of use or thirty days, then a license — V1 at $100, or Lifetime at $120 early bird ($150 later).
+
+Want something added or corrected? **[Open a pull request](https://github.com/gordo-labs/self-hosted-music-software/compare).** Maintainer of a tool in this stack? Even better. How to file it: [CONTRIBUTING.md](CONTRIBUTING.md).
