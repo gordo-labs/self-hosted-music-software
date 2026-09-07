@@ -1,0 +1,50 @@
+name: Add or discuss software
+description: Propose a tool for the landscape, or ask whether it belongs
+title: "[software] "
+labels: ["software"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Product name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official homepage
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: vertical
+    attributes:
+      label: Vertical
+      options:
+        - Library management
+        - Desktop playing
+        - Serving / backends
+        - Mobile clients
+        - Networking / away-from-home
+        - Discovery
+        - DJ / performance
+        - Playlists / export
+        - Multi-room / streamers
+        - Hybrid stack
+        - Not sure / new vertical
+    validations:
+      required: true
+  - type: textarea
+    id: job
+    attributes:
+      label: Job it does on an owned library
+      placeholder: Tag files, stream a Navidrome index, cache offline on Android, …
+    validations:
+      required: true
+  - type: checkboxes
+    id: role
+    attributes:
+      label: You are
+      options:
+        - label: Maintainer of this software
+        - label: User of this software on local files
