@@ -15,10 +15,11 @@ Merges are reviewed. Nothing here auto-publishes to [tapemusicsuite.com](https:/
 
 ## What not to add
 
-- Storefront-only streaming apps (the catalog lives in a vendor cloud).
+- Storefront-only streaming apps **as if they were the library** (the catalog lives in a vendor cloud). Discovery/Find and Intake are the right homes for Spotify, Bandcamp, etc.
 - Hardware SKUs, page-turner pedals, or live-notation apps unless we open a dedicated vertical.
 - “Better than X” tables, OSS sermons, or Tape-vs-the-field framing.
 - Duplicate entries. Search `README.md` first.
+- Links to Tape vertical essays that are not live yet (they 404). Related reading stays the published flagship + Iroh post until each essay ships on tapemusicsuite.com.
 
 ## How to PR
 
@@ -28,7 +29,7 @@ Merges are reviewed. Nothing here auto-publishes to [tapemusicsuite.com](https:/
 
    `- **[Name](https://official.example/)** — Strength: …. Weakness: ….`
 
-4. Put the tool in the vertical it actually does. If it spans jobs, pick the primary job and mention the rest in the weakness.
+4. Put the tool in the section of the ingest path it actually does: **find → intake → identify → serve → listen → reach → perform**. If it spans jobs, pick the primary job and mention the rest in the weakness. Storefronts (Spotify, Bandcamp, …) belong in Discovery / Intake, not as the library authority.
 5. In the PR template: your role (maintainer / user), homepage, and the job it covers.
 
 Issues are fine for “should this exist here?” before you write the bullet.
