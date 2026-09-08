@@ -2,8 +2,6 @@
 
 I built this directory out of need, and out of a curiosity I could not drop and years of experience and software digging. I wanted my music library to feel more easy, with the technology available should be that easy. Desk, phone, commute, all with my music. The first user was me, me alone for months. The product question came next: why isn’t there a **horizontal, stable** way to keep a coherent catalog across every part of that life, simple enough that listening stays **fun** instead of becoming a technical challenge?
 
-I built **[Tape Music Suite](https://tapemusicsuite.com)** while doing this research. v1 is out. With the goal to create a cohesive horizontal, easy, and professional experience of as much of those areas of music work as possible, self-hosted, good quality, reliable, with respect with the already setup library we all have. There is yet A LOT to cover and add to the flow.
-
 This repo is the open catalog. [PRs](CONTRIBUTING.md) from people who maintain software in this stack are welcome. Merges are reviewed; the list does not auto-publish to the Tape site.
 
 Essay companion: [The State of Self-Hosted Music Listening](https://tapemusicsuite.com/blog/state-of-self-hosted-music-listening). Site copy: [landscape post](https://tapemusicsuite.com/blog/self-hosted-music-software-landscape).
@@ -295,22 +293,14 @@ Here’s how I see this layer: specialists get you most of the way; living acros
 - **[Music Assistant](https://www.music-assistant.io/) + [Sendspin](https://www.sendspin-audio.com/) + [Home Assistant](https://www.home-assistant.io/)** — Strength: whole-home sync when the house is already an HA node. Weakness: smart-home gravity; local files can become one source among storefronts.
 - **[Lidarr](https://lidarr.audio/) + [Soularr](https://github.com/mrusse/soularr) + [slskd](https://github.com/slskd/slskd) → intake folder** — Strength: wanted-library automation that drops files where a hub can scan — the acquisition stack our plugin research mapped instead of shipping Soulseek in-process. Weakness: three daemons plus legal/ops posture; Inbox still has to become identity.
 
-“Almost one catalog feeling” is not almost a brand. Keep a quiet frankenstack if crates arrive, caches tell the truth, and remote nights are not incident response.
+This post mainly comes cause I've been keeping a deep research during the last years while I was developing [Tape Music Suite](https://tapemusicsuite.com). The main goal is to create a cohesive horizontal, easy, and professional experience of as much of those areas of music work as possible, self-hosted, good quality, reliable, with respect with the already setup library we all have.
 
 ---
 
 ## Related reading
 
-- [The State of Self-Hosted Music Listening](https://tapemusicsuite.com/blog/state-of-self-hosted-music-listening) — flagship state-of-play
-- [The Self-Hosted Music Software Landscape](https://tapemusicsuite.com/blog/self-hosted-music-software-landscape) — same list on the Tape site
-- [Iroh inside Tape — Personal Private network](https://tapemusicsuite.com/blog/iroh-device-connection-without-tailscale) — networking stance / architecture proof only
+- [The State of Self-Hosted Music Listening](https://tapemusicsuite.com/blog/state-of-self-hosted-music-listening)
+- [The Self-Hosted Music Software Landscape](https://tapemusicsuite.com/blog/self-hosted-music-software-landscape)
+- [Iroh inside Tape — Personal Private network](https://tapemusicsuite.com/blog/iroh-device-connection-without-tailscale)
 
----
-
-If you maintain five truths so the same music can follow you from desk to phone to set, that is a cohesion problem — not a failure of any specialist named above.
-
-This catalog is research, not a ranking, not a feature war. I’m not asking you to abandon rekordbox on stage if that still wins the night.
-
-I built [Tape Music Suite](https://tapemusicsuite.com) while doing this research. v1 is out. With the goal to create a cohesive horizontal, easy, and professional experience of as much of those areas of music work as possible, self-hosted, good quality, reliable, with respect with the already setup library we all have.
-
-Want something added or corrected? **[Open a pull request](https://github.com/gordo-labs/self-hosted-music-software/compare).** Maintainer of a tool in this stack? Even better. How to file it: [CONTRIBUTING.md](CONTRIBUTING.md).
+Want something added or corrected? **[Open a pull request](https://github.com/gordo-labs/self-hosted-music-software/compare).** How to file it: [CONTRIBUTING.md](CONTRIBUTING.md).
