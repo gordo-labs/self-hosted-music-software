@@ -2,7 +2,7 @@
 
 I built this directory out of need, and out of a curiosity I could not drop and years of experience and software digging. I wanted my music library to feel more easy, with the technology available should be that easy. Desk, phone, commute, all with my music. The first user was me, me alone for months. The product question came next: why isn’t there a **horizontal, stable** way to keep a coherent catalog across every part of that life, simple enough that listening stays **fun** instead of becoming a technical challenge?
 
-This list exist cause of during the time I evaluated almost all of them and got what I considered the best of their work, and adapted it to what I considered my workflow, later turned into **[Tape Music Suite](https://tapemusicsuite.com)** — v1 now. An opinionated horizontal stack for local music: it replaces foobar2000-class desk listening too. Keep rekordbox or similar on stage if that still wins the night. There is yet A LOT to cover and add to the flow.
+I built **[Tape Music Suite](https://tapemusicsuite.com)** while doing this research. v1 is out. With the goal to create a cohesive horizontal, easy, and professional experience of as much of those areas of music work as possible, self-hosted, good quality, reliable, with respect with the already setup library we all have. There is yet A LOT to cover and add to the flow.
 
 This repo is the open catalog. [PRs](CONTRIBUTING.md) from people who maintain software in this stack are welcome. Merges are reviewed; the list does not auto-publish to the Tape site.
 
@@ -90,22 +90,24 @@ Here’s how I see this layer: make a local archive searchable, identifiable, an
 
 ### Enrichment & identity
 
-- **[MusicBrainz Picard](https://picard.musicbrainz.org/)** — Strength: release-aware tagging against [MusicBrainz](https://musicbrainz.org/) / [AcoustID](https://acoustid.org/) that writes identity into the files so it survives a player reinstall. Weakness: matching still costs attention, and same-title different masters punish overconfident auto-accept.
+- **[MusicBrainz Picard](https://picard.musicbrainz.org/)** — Strength: release-aware tagging against [MusicBrainz](https://musicbrainz.org/) / [AcoustID](https://acoustid.org/) that writes identity into the files so it survives a player reinstall. On Mac, people pair it with [Yate](https://2manyrobots.com/yate/) and watch catalog numbers when singles/EPs misfire. Weakness: matching still costs attention; same-title different masters punish overconfident auto-accept; 100% on a large collection is not a real outcome.
 - **[beets](https://beets.io/)** — Strength: scriptable CLI import, rename, and metadata pipeline for people who want the library as versionable data. Weakness: it can become yet another authority beside a player DB, and the learning curve is real before the pipeline feels safe.
 - **[SongKong](https://jthink.net/songkong/) / [Yate](https://2manyrobots.com/yate/) / [Jaikoz](https://www.jthink.net/jaikoz/)** — Strength: automated tag repair that buys time back on mass enrichment. Weakness: destructive confidence against ambiguous releases.
 
 ### Batch file editors
 
-- **[Mp3tag](https://www.mp3tag.de/en/)** — Strength: durable batch tag editor (Windows + Mac) that writes portable edits to disk — the craft surface when DJ apps invited tagging and nothing round-tripped. Weakness: it won’t invent a listening or phone workflow for you; it’s hygiene, not a suite.
-- **[Kid3](https://kid3.kde.org/) / [TagScanner](https://www.xdlab.ru/en/index.htm)** — Strength: cross-platform / niche batch tagging on the same plane as Mp3tag-class. Weakness: fragmented naming and fewer shared workflows.
+- **[Mp3tag](https://www.mp3tag.de/en/)** — Strength: the Windows batch editor people actually live in — custom actions, scripts, and a lot of fully manual tagging because auto-taggers feel wrong on their files. Weakness: it won’t invent a listening or phone workflow; Mac builds exist, some 15k-library users still prefer a Mac-native editor.
+- **[Kid3](https://kid3.kde.org/)** — Strength: the Discogs + MusicBrainz GUI people keep on Mac and Linux when Mp3tag isn’t the home OS. Weakness: thinner shared “how we run this with a phone” muscle memory than Mp3tag on Windows.
+- **[Tag & Rename](https://www.softpointer.com/tr.htm)** — Strength: long-running Windows tagger (decades of the same install) with generate/rename and extra fields some people find faster than Mp3tag. Weakness: writes can feel slow now; Windows gravity.
+- **[TagScanner](https://www.xdlab.ru/en/index.htm)** — Strength: niche Windows batch tagging on the same plane. Weakness: named less often than Mp3tag; fewer shared workflows.
 
 ### Desk / OS library homes
 
-- **[foobar2000](https://www.foobar2000.org/) (as manager)** — Strength: columns and components as organize+listen UI without installing a separate library app. Weakness: deepest state stays in the foobar world; phone continuity is still a separate problem.
-- **[MusicBee](https://www.getmusicbee.com/)** — Strength: whole-Windows-home for daily library, playlists, and playback — an emotional center that may never need a server. Weakness: Windows gravity and dual-library drift if the handset diverges from the desk home.
+- **[foobar2000](https://www.foobar2000.org/) (as manager)** — Strength: columns and components as organize+listen UI without installing a separate library app; still the PC default for a durable cohort. Weakness: deepest state stays in the foobar world; phone continuity is a second player, Tailscale/SMB, or a server.
+- **[MusicBee](https://www.getmusicbee.com/)** — Strength: whole-Windows-home for daily library, playlists, and playback; Inbox → Auto Tag → Organise in seconds, and people sync a loved-track subset to the phone from the same app for years. Weakness: Windows gravity; Mac/Wine emulation of MusicBee is a real headache; dual-library drift if the handset diverges.
 - **[MediaMonkey](https://www.mediamonkey.com/)** — Strength: Windows library manager/player gravity with careful enrichment rituals. Weakness: auto-organize narratives can scare people who already fear destructive cleanup.
-- **[Swinsian](https://swinsian.com/)** — Strength: Mac-native library with playlist/XML-bridge habits that still feed export stories. Weakness: bridge labor remains; reliability and scale pain show up the same places iTunes-era lists did.
-- **[Apple Music](https://www.apple.com/apple-music/) / [iTunes](https://www.apple.com/itunes/)** — Strength: historic smart-list authority and XML export source that still shapes how people think playlists should work. Weakness: reliability frays at scale; streaming volatility and Date Added / re-import pain compound the handoff.
+- **[Swinsian](https://swinsian.com/)** — Strength: Mac-native library with playlist/XML-bridge habits; people build imaginary-set playlists there while Navidrome + play:Sub handle the phone. Weakness: migrating off iTunes often doesn’t feel worth it; no live link back from Navidrome stars/ratings.
+- **[Apple Music](https://www.apple.com/apple-music/) / [iTunes](https://www.apple.com/itunes/)** — Strength: historic smart-list authority and XML export source; 50k-track Mac home-sharing still works for people who never left the Apple glass. Weakness: stuck-in-2005 metadata (no extra fields, no multi-value genre/artist); iTunes Match can serve a different master than the rip you own; DJs outgrow it.
 
 ### DJ hygiene & accidental managers
 
@@ -127,7 +129,7 @@ Here’s how I see this layer: make a local archive searchable, identifiable, an
 
 Here’s how I see this layer: index owned files, expose catalog + stream API, stay up — a finished backend vertical beside desk and phone layers.
 
-- **[Navidrome](https://www.navidrome.org/)** — Strength: lean Subsonic/OpenSubsonic music index + stream with a small footprint and replaceable clients — the DIY-Spotify convergence point I see most often. Weakness: “server up” is not organization, discovery polish, or DJ export; ops and tagging still sit on you.
+- **[Navidrome](https://www.navidrome.org/)** — Strength: lean Subsonic/OpenSubsonic music index + stream with a small footprint and replaceable clients; the DIY-Spotify point I see most often, usually with Symfonium on the phone and Feishin on the laptop while MusicBee/foobar/Picard still own tags. Weakness: “server up” is not organization; Navidrome reads tags, it does not fix them; ops and hygiene still sit on you.
 - **[Jellyfin](https://jellyfin.org/) (music)** — Strength: music as a module on a broader self-hosted media appliance you may already run for video. Weakness: client quality and metadata awkwardness vary; music UX inherits whatever companion you pick.
 - **[Ampache](https://ampache.org/)** — Strength: long-running web music server with API clients and Subsonic-family muscle memory. Weakness: older UX gravity; not always the first pick when people want a lean modern footprint.
 - **[Subsonic](https://www.subsonic.org/)-family / forks** — Strength: protocol-era servers that shaped the whole client ecosystem; older deployments still work. Weakness: lineage and licensing history confuse newcomers; forks and successors scatter the “which one” answer.
@@ -135,8 +137,9 @@ Here’s how I see this layer: index owned files, expose catalog + stream API, s
 - **[Plex](https://www.plex.tv/) (music)** — Strength: index and stream owned music inside an ecosystem that usually pairs with Plexamp polish. Weakness: closed loop and cost/identity tax; management may still need a side tool.
 - **[gonic](https://github.com/sentriz/gonic)** — Strength: minimal Subsonic-compatible music server for people who want even less than Navidrome’s surface. Weakness: thinner docs and client assumptions.
 - **[Polaris](https://github.com/agersant/polaris)** — Strength: lean self-hosted music streamer (Rust) with its own API and first-party Android client; cited when people want a small server without the Subsonic-family gravity. Weakness: thinner shared “how we run this with Symfonium” muscle memory than Navidrome.
-- **[Music Assistant](https://www.music-assistant.io/)** — Strength: Home Assistant–adjacent music engine that can fan a library out to many player types (including [Sendspin](https://www.sendspin-audio.com/)). Weakness: abstraction over local _and_ cloud sources — easy to reintroduce a second catalog while chasing whole-home sync.
-- **[Lyrion](https://lyrion.org/) (LMS)** — Strength: legacy Squeeze network-audio lineage still honest in some collector homes. Weakness: niche continuity; not the default DIY-Spotify path most people mean today.
+- **[mStream](https://mstream.io/)** — Strength: self-hosted music server with a first-party Android app; AutoDJ / sonic-similarity is the citation when people want a small stack that is not Navidrome. Weakness: own ecosystem, not OpenSubsonic-class client density.
+- **[Music Assistant](https://www.music-assistant.io/)** — Strength: Home Assistant–adjacent music engine that can fan a library out to many player types (including [Sendspin](https://www.sendspin-audio.com/)); the house path I see next to Sonos, with Plexamp still covering the commute. Weakness: abstraction over local _and_ cloud sources — easy to reintroduce a second catalog while chasing whole-home sync.
+- **[Lyrion](https://lyrion.org/) (LMS)** — Strength: Squeeze network-audio lineage still honest in collector homes that only listen at home and keep a DAP for the plane. Weakness: niche continuity; not the default DIY-Spotify path most people mean today.
 - **[Emby](https://emby.media/)** — Strength: commercial media-server peer on the same plane as Plex/Jellyfin when music mode appears. Weakness: music is rarely the reason people choose it.
 - **[Docker](https://www.docker.com/)** — Strength: the ops surface that makes mounts, backups, and rescans repeatable. Weakness: not a music product — listening trust now includes containers, volumes, and recovery fear.
 
@@ -146,14 +149,16 @@ Here’s how I see this layer: index owned files, expose catalog + stream API, s
 
 Here’s how I see this layer: craft playback on a serious desk machine — formats, gapless, DSP, dense listen UI — not merely staging for a gig.
 
-- **[foobar2000](https://www.foobar2000.org/)** — Strength: high-craft local playback and a component ecosystem that still defines serious desk listening for a durable cohort. Weakness: deepest state stays on the machine; “foobar on mobile?” is continuity demand the player itself never solved.
-- **[MusicBee](https://www.getmusicbee.com/)** — Strength: integrated Windows listen + organize so one app can be the whole home. Weakness: leaving Windows (or adding a phone path) reopens dual-library risk.
+- **[foobar2000](https://www.foobar2000.org/)** — Strength: high-craft local playback and a component ecosystem that still defines serious desk listening for a durable cohort; people still say “computer with foobar.” Weakness: deepest state stays on the machine; “foobar on mobile?” is continuity the player never solved, so the phone is Poweramp, foobar Mobile, or a tunnel to SMB.
+- **[MusicBee](https://www.getmusicbee.com/)** — Strength: integrated Windows listen + organize so one app can be the whole home; the daily driver next to Symfonium when a Navidrome server exists, and next to Musicolet when it doesn’t. Weakness: leaving Windows (or adding a phone path) reopens dual-library risk.
 - **[Plexamp](https://www.plex.tv/plexamp/) (desktop path)** — Strength: polished playback surface for [Plex](https://www.plex.tv/) music — closed polish reference without pretending to replace foobar craft. Weakness: you’re inside the Plex loop; management and file hygiene may still need another tool.
 - **[Roon](https://roon.app/)** — Strength: high-polish commercial listening suite over local/NAS libraries — a closed reference bar for curated desk listening. Weakness: cost and subscription objections are fair; it’s not cheap hygiene, and continuity outside Roon is still your problem.
-- **[Feishin](https://github.com/jeffvli/feishin)** — Strength: desk/browser UI against OpenSubsonic-family servers; common in the Navidrome + Symfonium pride stack. Weakness: it’s a client, not a library manager — tagging and backups stay elsewhere.
+- **[Feishin](https://github.com/jeffvli/feishin)** — Strength: desk/browser UI against OpenSubsonic-family servers; the laptop client next to Navidrome + Symfonium, including when a local player (Tauon-class) stopped scaling. Weakness: it’s a client, not a library manager — tagging and backups stay elsewhere.
 - **OS stock players** — Strength: zero-friction default glass that plays files today. Weakness: baseline serious users outgrow; no library craft, no portable identity story.
 - **[Audirvana](https://audirvana.com/) / [VOX](https://vox.rocks/)** — Strength: audiophile / high-res desk listening for format and DSP loyalty. Weakness: niche surface area; continuity outside the desk player is still your problem.
-- **[Strawberry](https://www.strawberrymusicplayer.org/) / [Quod Libet](https://quodlibet.readthedocs.io/) / [Clementine](https://www.clementine-player.org/) / [DeaDBeeF](https://deadbeef.sourceforge.io/)** — Strength: Linux/open desk players on the same plane outside Windows-centric stacks. Weakness: thinner shared “how we run this with a phone” muscle memory.
+- **[Strawberry](https://www.strawberrymusicplayer.org/) / [Quod Libet](https://quodlibet.readthedocs.io/) / [Clementine](https://www.clementine-player.org/) / [DeaDBeeF](https://deadbeef.sourceforge.io/)** — Strength: Linux/open desk players on the same plane outside Windows-centric stacks; Quod Libet is the Debian listen I see named without apology. Weakness: thinner shared “how we run this with a phone” muscle memory.
+- **[fooyin](https://www.fooyin.org/)** — Strength: the Linux desk player foobar people move to when they want columns/layout muscle memory without Windows. Weakness: not the component ecosystem of desktop foobar; phone path is still a separate client.
+- **[Tauon](https://github.com/Taiko2k/Tauon)** — Strength: Linux local player people actually used as the whole library until the collection outgrew the disk. Weakness: when it stops scaling, the next sentence is Navidrome + Feishin, not a bigger Tauon.
 
 ---
 
@@ -163,8 +168,8 @@ Here’s how I see this layer: use the owned archive away from the desk — brow
 
 ### Android & closed polish
 
-- **[Symfonium](https://symfonium.app/)** — Strength: Android API client high bar — profiles, smart playlists, offline cache against servers; the daily-driver citation in DIY-Spotify setups. Weakness: paid client value objections; export back to DJ apps and desk authorities still fragile.
-- **[Plexamp](https://www.plex.tv/plexamp/)** — Strength: closed polish ceiling for phone listening inside Plex — pre-cache, sonic features, finished-feeling UI. Weakness: you’re buying the Plex loop; outside that ecosystem the bar is a reference, not a portable library manager.
+- **[Symfonium](https://symfonium.app/)** — Strength: Android API client high bar — profiles, smart playlists, offline cache against servers; the daily-driver next to Navidrome. Also honest as a local-files / NAS / Drive player; Android Auto; people cache FLAC off cellular. Weakness: paid client value objections; export back to DJ apps and desk authorities still fragile. Files have to be tagged or the custom UI has nothing to show.
+- **[Plexamp](https://www.plex.tv/plexamp/)** — Strength: closed polish ceiling for phone listening inside Plex — pre-cache, sonic features, finished-feeling UI; the commute client even when the house is Music Assistant / Sonos. Weakness: you’re buying the Plex loop; outside that ecosystem the bar is a reference, not a portable library manager.
 
 ### iOS (OpenSubsonic / Jellyfin-shaped)
 
@@ -174,13 +179,23 @@ Here’s how I see this layer: use the owned archive away from the desk — brow
 - **[Narjo](https://www.narjomusic.com/)** — Strength: another iOS client in the owned-library field. Weakness: inventory peer, not a guarantee of Symfonium-class depth — verify against your backend before committing.
 - **[Nautiline](https://nautiline.app/)** — Strength: iOS client for people already on Subsonic/Jellyfin-shaped stacks. Weakness: same field limits — phone is projection, not the place tags get fixed.
 - **[NaviBeat](https://navibeat.app/)** — Strength: newer iOS / Apple multi-device peer in the Subsonic/Jellyfin field. Weakness: newer means less shared muscle memory; treat as peer, not settled default.
+- **play:Sub** — Strength: classic iOS Subsonic client; still named next to Navidrome (and Audirvana at home). Weakness: polish lags the current iOS field; lives on the [Subsonic apps list](https://www.subsonic.org/pages/apps.jsp), no separate product homepage.
 
 ### Caching, on-device, DAP
 
+Here’s how I see this layer: two jobs people mix up. One is **cache of a server catalog** so the commute still plays when the tunnel dies. The other is **files already on the phone** — phone-as-DAP, the conversation when the collection still lives in the pocket and a hub is optional.
+
 - **Sonamp-class caching** — Strength: aggressive start-fast / pre-cache pattern collectors praise over cellular. Weakness: product homepage **TBD** — treat as pattern until Comms confirms a software product (not Sonance hardware).
-- **Local-files / on-device players** — Strength: phone-as-DAP without a hub narrative; files in the pocket, honest and simple. Weakness: second-library risk if the pocket copy is not a projection of the hub (TBD / n/a).
-- **Android / portable DAP players** — Strength: dedicated portable playback of owned files for travel subsets. Weakness: subset vs NAS canonical — which truth wins on write? (URL TBD)
-- **[Poweramp](https://www.powerampapp.com/) / [USB Audio Player Pro](https://www.extreamsd.com/)** — Strength: on-device Android library playback with EQ/format craft. Weakness: desk and server identities stay elsewhere.
+- **Local-files / on-device players** — Strength: phone-as-DAP without a hub narrative; files in the pocket, honest and simple. Weakness: second-library risk if the pocket copy is not a projection of the hub.
+- **Android / portable DAP hardware** — Strength: dedicated portable playback of owned files for travel subsets. Weakness: subset vs NAS canonical — which truth wins on write? Hardware, not an app homepage.
+- **[Musicolet](https://krosbits.in/musicolet/)** — Strength: free ad-free local Android player; Android Auto that feels like Spotify in the car; tag/art edits; multiple queues are why people pick it over Poweramp. Years-long pair with MusicBee on the desk. Weakness: on-device library, not a Navidrome client; the pocket copy can drift from the hub.
+- **[Poweramp](https://www.powerampapp.com/)** — Strength: paid on-device workhorse for earbuds / general listening; the other long-running Android local citation next to Musicolet. Weakness: license checks on a player you already bought; desk and server identities stay elsewhere.
+- **[USB Audio Player Pro](https://www.extreamsd.com/)** — Strength: bypass the Android mixer / USB DAC path; the split I see is Poweramp for MP3/earbuds, UAPP for FLAC/WAV/DSD into an external DAC. Weakness: audiophile sidecar, not a commute library manager.
+- **[foobar2000](https://www.foobar2000.org/android) Mobile / [Neutron](https://www.neutroncode.com/player)** — Strength: pocket craft — foobar continuity and Neutron’s DSP/SQ bar (clunky UI, best sound is the usual split). Weakness: not the desktop component ecosystem; SQ apps are easy to keep as a second player beside the daily UI.
+- **[HiBy Music](https://play.google.com/store/apps/details?id=com.hiby.music) / [AIMP](https://www.aimp.ru/)** — Strength: DAP-vendor player people keep fully offline after buying Poweramp/UAPP and getting tired of license pings; AIMP also plays a NAS library over [Tailscale](https://tailscale.com/). Weakness: vendor/desk-era gravity; Tailscale+NAS next-track can stall ~10s on cellular; neither is the OpenSubsonic daily driver.
+- **[Auxio](https://github.com/OxygenCobalt/Auxio) / [Oto Music](https://play.google.com/store/apps/details?id=com.piyush.music)** — Strength: FOSS local player, and a Material You player people pick for synced lyrics sitting in the files. Weakness: thinner paid-app surface; lyrics fetch can reintroduce network where the point was offline.
+- **[Rocket Player](https://mumastudios.com/rocketplayer/) / [jetAudio+](https://play.google.com/store/apps/details?id=com.jetappfactory.jetaudio)** — Strength: years-long local Android workhorses; jetAudio+ named for Auto and SQ in the same pocket-library threads. Weakness: older gravity; not the current server-client high bar.
+- **[Audion](https://audionplayer.com/)** — Strength: another local Android player named in that pocket-library conversation. Weakness: thinner shared muscle memory than Musicolet/Poweramp; treat as peer.
 
 ### DJ-cloud mobile prep (alternate plane)
 
@@ -190,7 +205,8 @@ Here’s how I see this layer: use the owned archive away from the desk — brow
 ### Ecosystem & classic Subsonic clients
 
 - **[Finamp](https://github.com/finamp-app/finamp)** — Strength: popular Jellyfin music phone surface when the household already standardized on Jellyfin. Weakness: UX inherits companion quality; you’re still projecting a server catalog.
-- **[Tempo](https://github.com/CappielloAntonio/tempo) / [DSub](https://github.com/daneren2005/Subsonic) / [Ultrasonic](https://gitlab.com/ultrasonic/ultrasonic) / play:Sub** — Strength: earlier-generation Subsonic phone clients with historical density and muscle memory. Weakness: polish and offline expectations often lag the current Android high bar. play:Sub lives on the [Subsonic apps list](https://www.subsonic.org/pages/apps.jsp); no separate product homepage.
+- **[Tempo](https://github.com/CappielloAntonio/tempo) / [DSub](https://github.com/daneren2005/Subsonic) / [Ultrasonic](https://gitlab.com/ultrasonic/ultrasonic)** — Strength: earlier-generation Android Subsonic phone clients with historical density. Weakness: polish and offline expectations often lag the current Android high bar.
+- **[Substreamer](https://substreamer.org/)** — Strength: free OpenSubsonic Android/iOS client people actually run next to Navidrome when they don’t want to pay Symfonium. Weakness: genre browse and polish objections versus the paid high bar; still a projection of server tags.
 
 ---
 
@@ -200,7 +216,7 @@ Here’s how I see this layer: reach the same hub catalog off-LAN without copyin
 
 - **LAN-only** — Strength: correct default for owned libraries; no remote tax, disks feel local. Weakness: leave the house and the lifestyle pauses unless you add another layer.
 - **Port forward + reverse proxy + DDNS ([Caddy](https://caddyserver.com/) / [Traefik](https://traefik.io/) / [nginx](https://nginx.org/))** — Strength: classic remote exposure of a media server when you own the ops skill. Weakness: open-internet risk and an ops skill gate before playback.
-- **[Tailscale](https://tailscale.com/)** — Strength: the overlay I see named most often next to Navidrome/Jellyfin/Plex stacks — zero-config mesh so the phone treats home services as local. Weakness: sidecar app + identity on every device; wrong tax when the promise was a music suite.
+- **[Tailscale](https://tailscale.com/)** — Strength: the overlay I see named most often next to Navidrome/Jellyfin/Plex stacks, and also as SMB so foobar on the phone treats the PC share as local. Weakness: sidecar app + identity on every device; cellular next-track stalls when the player is talking to a NAS through the mesh.
 - **[Headscale](https://headscale.net/)** — Strength: self-hosted Tailscale control plane for people who want the same overlay without Tailscale’s coordination server. Weakness: you now operate the control plane too.
 - **[Netbird](https://netbird.io/) / [ZeroTier](https://www.zerotier.com/)** — Strength: other mesh/overlay products people actually install to reach a home music server. Weakness: same sidecar gravity — excellent homelab tools, still not a listening product.
 - **[WireGuard](https://www.wireguard.com/)** — Strength: lean VPN tunnels into the homelab; named constantly beside commute clients, often underneath Tailscale. Weakness: you’re a part-time network operator; cellular + VPN + cache fail together.
@@ -254,7 +270,7 @@ Here’s how I see this layer: build ordered listening as labor; carry that work
 Here’s how I see this layer: whole-home playback and dedicated streamer boxes — rooms in sync, a Pi as a DAC endpoint — not the commute phone path and not library hygiene. Adjacent to serving; not a substitute for a hub catalog. No dedicated essay in this series (lateral).
 
 - **[Sendspin](https://www.sendspin-audio.com/)** — Strength: open whole-home sync (Open Home Foundation) aimed at audio + artwork across rooms, often via [Music Assistant](https://www.music-assistant.io/). Weakness: a multi-room protocol is not desk→phone continuity; HA gravity can become the product.
-- **[moOde Audio](https://moodeaudio.org/)** — Strength: Raspberry Pi streamer OS with a serious web UI for local and renderer playback. Weakness: appliance listening in the room; the phone and the tag pipeline still live elsewhere.
+- **[moOde Audio](https://moodeaudio.org/)** — Strength: Raspberry Pi streamer OS with a serious web UI; people run MPD under it on 100k-track FLAC libraries with the phone as a remote. Weakness: appliance listening in the room; the tag pipeline still lives elsewhere.
 - **[piCorePlayer](https://www.picoreplayer.org/)** — Strength: RAM-boot Squeeze/Lyrion player (and optional LMS host) that people trust through power pulls. Weakness: Lyrion-lineage world; not the default Navidrome + Symfonium commute stack.
 - **[Sonos](https://www.sonos.com/) / Chromecast / UPnP ([Rygel](https://gnome.pages.gitlab.gnome.org/rygel/))** — Strength: room endpoints people already use when the phone is a controller, not the speaker. Weakness: renderer identity is not catalog identity; groups and caches drift from the hub.
 
@@ -268,8 +284,8 @@ Here’s how I see this layer: specialists get you most of the way; living acros
 - **[Plex](https://www.plex.tv/) + [Plexamp](https://www.plex.tv/plexamp/)** — Strength: closed polish reference loop (pre-cache, sonic, phone UX). Weakness: management may still need another tool; you’re inside one ecosystem’s gravity.
 - **[Navidrome](https://www.navidrome.org/) ∥ [Plex](https://www.plex.tv/) (parallel)** — Strength: two backends on purpose — lean music index + broader media appliance, each loved for a job. Weakness: two authorities; lifetime math and which-truth-wins arguments never fully leave.
 - **[Jellyfin](https://jellyfin.org/)-first + phone client** — Strength: music as a module on an existing video appliance. Weakness: UX inherits client quality; music is rarely the appliance’s first love.
-- **[foobar2000](https://www.foobar2000.org/) + USB / synced phone folder** — Strength: anti-server honesty; listening craft supreme. Weakness: continuity is manual; second-library risk when the pocket copy drifts.
-- **[MusicBee](https://www.getmusicbee.com/)-as-whole-Windows-home** — Strength: quiet variant — one Windows app as emotional center ± occasional phone sync. Weakness: dual-library drift when the handset diverges.
+- **[foobar2000](https://www.foobar2000.org/) + USB / synced phone folder** — Strength: anti-server honesty; listening craft supreme; the other common pair is foobar on the PC and Poweramp on the phone. Weakness: continuity is manual; second-library risk when the pocket copy drifts.
+- **[MusicBee](https://www.getmusicbee.com/) + [Musicolet](https://krosbits.in/musicolet/)** — Strength: Windows home + free Android local player, including MusicBee syncing loved tracks to the phone, a stack people have kept for years without a server. Weakness: two libraries; loved-subset sync is not the whole archive.
 - **[Lexicon](https://www.lexicondj.com/) + [rekordbox](https://rekordbox.com/en/)/[Serato](https://serato.com/dj) ± [MIXO](https://www.mixo.dj/)/rekordbox Cloud** — Strength: hygiene beside performance; protect stage tools from being the only DB. Weakness: paid fragmentation and sync/crate seams still show up on bad weeks.
 - **[iTunes](https://www.apple.com/itunes/)/[Apple Music](https://www.apple.com/apple-music/) smart lists → DJ XML** — Strength: historic smart-list labor still feeding performance apps. Weakness: half-working bridges that ship weekends — reliability and identity loss at scale.
 - **[Dropbox](https://www.dropbox.com/) / [Syncthing](https://syncthing.net/) synced music folder** — Strength: sync-as-mobile-strategy when VPN feels like the product. Weakness: encodes second truth the moment both sides write.
@@ -293,6 +309,8 @@ Here’s how I see this layer: specialists get you most of the way; living acros
 
 If you maintain five truths so the same music can follow you from desk to phone to set, that is a cohesion problem — not a failure of any specialist named above.
 
-This catalog is research for that build — not a ranking, not a feature war. I’m not asking you to abandon rekordbox on stage if that still wins the night. At the desk, Tape is the home — it replaces foobar2000-class players rather than sitting beside them. Trial on Tape is twenty hours of use or thirty days, then a license — V1 at $100, or Lifetime at $120 early bird ($150 later).
+This catalog is research, not a ranking, not a feature war. I’m not asking you to abandon rekordbox on stage if that still wins the night.
+
+I built [Tape Music Suite](https://tapemusicsuite.com) while doing this research. v1 is out. With the goal to create a cohesive horizontal, easy, and professional experience of as much of those areas of music work as possible, self-hosted, good quality, reliable, with respect with the already setup library we all have.
 
 Want something added or corrected? **[Open a pull request](https://github.com/gordo-labs/self-hosted-music-software/compare).** Maintainer of a tool in this stack? Even better. How to file it: [CONTRIBUTING.md](CONTRIBUTING.md).
